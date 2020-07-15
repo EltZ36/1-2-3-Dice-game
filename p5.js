@@ -4,22 +4,26 @@
 var z = 0;
 var x = 0;
 var y = 0;
-//added sum for die set 1
-let result1 = z + w + y;
+var p1bet;
 //for 2nd die set.
 var t = 0;
 var a = 0;
 var z1 = 0;
-//added sum for die set 2
-let result2 = t + a +z1;
+var p2bet;
 function setup() {
   createCanvas(500, 500);
   button = createButton("Player 1 button");
   button.position(127, 220);
+  p1bet = createInput('');
+  p1bet.position(127, 270);
+  p1bet.size(70);
   button.mousePressed(check_odd);
   button = createButton("Player 2 button");
   button.position(280, 220);
   button.mousePressed(check_odd2);
+  p2bet = createInput('');
+  p2bet.position(280, 270);
+  p2bet.size(70);
 }
 function draw() {
   background(255);
@@ -108,4 +112,8 @@ function check_odd2() {
   a = round(random(0.5, 6.4));
   z1 = round(random(0.5, 6.4));
   redraw();
+}
+function bet1(){
+}
+function bet2(){
 }
