@@ -1,17 +1,19 @@
-//This version of the 4-5-6 game is without a bank.
+/This version of the 4-5-6 game is without a bank.
 //for first die set.
 //requires p5.dom.js library
-var z1 = 0;
+var z = 0;
 var x = 0;
 var y = 0;
+//added sum for die set 1
+let result1 = z + w + y;
 //for 2nd die set.
-var z = 0;
 var t = 0;
 var a = 0;
-var button;
+var z1 = 0;
+//added sum for die set 2
+let result2 = t + a +z1;
 function setup() {
   createCanvas(500, 500);
-  z1 = 0;
   button = createButton("Player 1 button");
   button.position(127, 220);
   button.mousePressed(check_odd);
@@ -27,12 +29,12 @@ function draw() {
   rectangles();
 } // end of draw function.
 function rectangles(){
-  text(z1, 10, 80, 200, 200);
+  text(z, 10, 80, 200, 200);
   text(x, 60, 80, 200, 200);
   text(y, 110, 80, 200, 200);
   text(t, 170, 80, 200, 200);
   text(a, 220, 80, 200, 200);
-  text(z, 270, 80, 200, 200);
+  text(z1, 270, 80, 200, 200);
   noFill();
   rect(0, 75, 30, 30);
   rect(50, 75, 30, 30);
@@ -42,61 +44,61 @@ function rectangles(){
   rect(260, 75, 30, 30);
 }
 function if_statements(){
-  choices = ["Player 1 loses.", "Player 1 has a trip.", "Player 1 loses.","Player 1 wins!","Player 2 loses.","Player 2 has a trip.", "Player 2 wins!","Draw."]
-  if (z1 == 1 && x == 2 && y == 3) {
+  choices = ["Player 1 loses.", "Player 1 has a trip.", "Player 1 loses.","Player 1 wins!","Player 2 loses.","Player 2 has a trip.", "Player 2 wins!","Draw."];
+  if (z == 1 && x == 2 && y == 3) {
     text(choices[0], 0, 150, 80, 200);
   }
-  if (z1 == 1 && x == 1 && y == 1) {
+  if (z == 1 && x == 1 && y == 1) {
     text(choices[1], 0, 150, 80, 200);
   }
-  if (z1 == 2 && x == 2 && y == 2) {
+  if (z == 2 && x == 2 && y == 2) {
     text(choices[1], 0, 150, 80, 200);
   }
-  if (z1 == 3 && x == 3 && y == 3) {
+  if (z == 3 && x == 3 && y == 3) {
     text(choices[1], 0, 150, 80, 200);
   }
-  if (z1 == 4 && x == 4 && y == 4) {
+  if (z == 4 && x == 4 && y == 4) {
     text(choices[1], 0, 150, 80, 200);
   }
-  if (z1 == 5 && x == 5 && y == 5) {
+  if (z == 5 && x == 5 && y == 5) {
     text(choices[1], 0, 150, 80, 200);
   }
-  if (z1 == 6 && x == 6 && y == 6) {
+  if (z == 6 && x == 6 && y == 6) {
     text(choices[1], 0, 150, 80, 200);
   }
-  if (z1 == 4 && x == 5 && y == 6) {
+  if (z == 4 && x == 5 && y == 6) {
     text(choices[3], 0, 150, 80, 200);
   }
-  if (t == 1 && a == 2 && z == 3) {
+  if (t == 1 && a == 2 && z1 == 3) {
     text(choices[4], 250, 420, 80, 200);
   }
-  if (t == 1 && a == 1 && z == 1) {
+  if (t == 1 && a == 1 && z1 == 1) {
     text(choices[5], 420, 150, 80, 200);
   }
-  if (t == 2 && a == 2 && z == 2) {
+  if (t == 2 && a == 2 && z1 == 2) {
     text(choices[5], 420, 150, 80, 200);
   }
-  if (t == 3 && a == 3 && z == 3) {
+  if (t == 3 && a == 3 && z1 == 3) {
     text(choices[5], 420, 150, 80, 200);
   }
-  if (t == 4 && a == 4 && z == 4) {
+  if (t == 4 && a == 4 && z1 == 4) {
     text(choices[5], 420, 150, 80, 200);
   }
-  if (t == 5 && a == 5 && z == 5) {
+  if (t == 5 && a == 5 && z1 == 5) {
     text(choices[5], 420, 150, 80, 200);
   }
-  if (t == 6 && a == 6 && z == 6) {
+  if (t == 6 && a == 6 && z1 == 6) {
     text(choices[5], 420, 150, 80, 200);
   }
-  if (t == 4 && a == 5 && z == 6) {
+  if (t == 4 && a == 5 && z1 == 6) {
     text(choices[6], 420, 150, 80, 200);
   }
-  if (z1 == 1 && x == 2 && y == 3 && t == 4 && a == 5 && z == 6) {
+  if (z == 1 && x == 2 && y == 3 && t == 4 && a == 5 && z1 == 6) {
     text(choices[7], 0, 150, 80, 200);
   }
 }
 function check_odd() {
-  z1 = round(random(0.5, 6.4));
+  z = round(random(0.5, 6.4));
   x = round(random(0.5, 6.4));
   y = round(random(0.5, 6.4));
   redraw();
@@ -104,6 +106,6 @@ function check_odd() {
 function check_odd2() {
   t = round(random(0.5, 6.4));
   a = round(random(0.5, 6.4));
-  z = round(random(0.5, 6.4));
+  z1 = round(random(0.5, 6.4));
   redraw();
 }
