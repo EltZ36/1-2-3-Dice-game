@@ -1,2 +1,2 @@
-# 1-2-3-Dice-game
+# 4-5-6 Dice-game
 Coded in p5.js
