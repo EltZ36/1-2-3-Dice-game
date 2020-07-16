@@ -24,6 +24,14 @@ function setup() {
   p2bet = createInput('');
   p2bet.position(280, 270);
   p2bet.size(70);
+  //player 1 input for bets
+  button = createButton('Enter');
+  button.position(200,270);
+  button.mousePressed(bet1);
+  //player 2 input for bets
+  button = createButton('Enter');
+  button.position(350,270);
+  button.mousePressed(bet2);
 }
 function draw() {
   background(255);
@@ -114,6 +122,19 @@ function check_odd2() {
   redraw();
 }
 function bet1(){
+  p1bet = createInput('');
+  p1bet.position(127, 270);
+  p1bet.size(70);
+  pbet1 = p1bet.value();
+  text("Player 1 bets" + pbet1+ "dollar(s).",127,280,80,200);
+  p1bet.value('');
+}
 }
 function bet2(){
+  p2bet = createInput('');
+  p2bet.position(280, 270);
+  p2bet.size(70);
+  pbet2 = p2bet.value();
+  text("Player 2 bets"+pbet2+"dollar(s).")
+  p2bet.value('');
 }
