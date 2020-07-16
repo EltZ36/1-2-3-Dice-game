@@ -1,6 +1,6 @@
-/This version of the 4-5-6 game is without a bank.
-//for first die set.
+/This version of the 4-5-6 game is without a banker.
 //requires p5.dom.js library
+//for first die set.
 var z = 0;
 var x = 0;
 var y = 0;
@@ -24,11 +24,11 @@ function setup() {
   p2bet = createInput('');
   p2bet.position(280, 270);
   p2bet.size(70);
-  //player 1 input for bets
+  //player 1 input for betting
   button = createButton('Enter');
   button.position(200,270);
   button.mousePressed(bet1);
-  //player 2 input for bets
+  //player 2 input for betting
   button = createButton('Enter');
   button.position(350,270);
   button.mousePressed(bet2);
@@ -39,7 +39,7 @@ function draw() {
   textSize(20);
   if_statements();
   rectangles();
-} // end of draw function.
+}
 function rectangles(){
   text(z, 10, 80, 200, 200);
   text(x, 60, 80, 200, 200);
@@ -126,7 +126,7 @@ function bet1(){
   p1bet.position(127, 270);
   p1bet.size(70);
   pbet1 = p1bet.value();
-  text("Player 1 bets" + pbet1+ "dollar(s).",127,280,80,200);
+  text("Player 1 bets" + pbet1+ "dollar(s).",127,310,80,200);
   p1bet.value('');
 }
 }
@@ -135,6 +135,6 @@ function bet2(){
   p2bet.position(280, 270);
   p2bet.size(70);
   pbet2 = p2bet.value();
-  text("Player 2 bets"+pbet2+"dollar(s).")
+  text("Player 2 bets"+pbet2+"dollar(s).",280,310,80,200);
   p2bet.value('');
 }
