@@ -10,6 +10,7 @@ var t = 0;
 var a = 0;
 var z1 = 0;
 var p2bet;
+
 function setup() {
   createCanvas(500, 500);
   button = createButton("Player 1 button");
