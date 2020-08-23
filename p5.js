@@ -1,4 +1,4 @@
-/This version of the 4-5-6 game is without a banker.
+//This version of the 4-5-6 game is without a banker.
 //requires p5.dom.js library
 //for first die set.
 var z = 0;
@@ -8,7 +8,7 @@ var p1bet;
 //for 2nd die set.
 var t = 0;
 var a = 0;
-var z1 = 0;
+var z2 = 0;
 var p2bet;
 
 function setup() {
@@ -47,7 +47,7 @@ function rectangles(){
   text(y, 110, 80, 200, 200);
   text(t, 170, 80, 200, 200);
   text(a, 220, 80, 200, 200);
-  text(z1, 270, 80, 200, 200);
+  text(z2, 270, 80, 200, 200);
   noFill();
   rect(0, 75, 30, 30);
   rect(50, 75, 30, 30);
@@ -57,57 +57,40 @@ function rectangles(){
   rect(260, 75, 30, 30);
 }
 function if_statements(){
-  choices = ["Player 1 loses.", "Player 1 has a trip.", "Player 1 loses.","Player 1 wins!","Player 2 loses.","Player 2 has a trip.", "Player 2 wins!","Draw."];
-  if (z == 1 && x == 2 && y == 3) {
-    text(choices[0], 0, 150, 80, 200);
-  }
-  if (z == 1 && x == 1 && y == 1) {
-    text(choices[1], 0, 150, 80, 200);
-  }
-  if (z == 2 && x == 2 && y == 2) {
-    text(choices[1], 0, 150, 80, 200);
-  }
-  if (z == 3 && x == 3 && y == 3) {
-    text(choices[1], 0, 150, 80, 200);
-  }
-  if (z == 4 && x == 4 && y == 4) {
-    text(choices[1], 0, 150, 80, 200);
-  }
-  if (z == 5 && x == 5 && y == 5) {
-    text(choices[1], 0, 150, 80, 200);
-  }
-  if (z == 6 && x == 6 && y == 6) {
-    text(choices[1], 0, 150, 80, 200);
-  }
-  if (z == 4 && x == 5 && y == 6) {
-    text(choices[3], 0, 150, 80, 200);
-  }
-  if (t == 1 && a == 2 && z1 == 3) {
-    text(choices[4], 250, 420, 80, 200);
-  }
-  if (t == 1 && a == 1 && z1 == 1) {
-    text(choices[5], 420, 150, 80, 200);
-  }
-  if (t == 2 && a == 2 && z1 == 2) {
-    text(choices[5], 420, 150, 80, 200);
-  }
-  if (t == 3 && a == 3 && z1 == 3) {
-    text(choices[5], 420, 150, 80, 200);
-  }
-  if (t == 4 && a == 4 && z1 == 4) {
-    text(choices[5], 420, 150, 80, 200);
-  }
-  if (t == 5 && a == 5 && z1 == 5) {
-    text(choices[5], 420, 150, 80, 200);
-  }
-  if (t == 6 && a == 6 && z1 == 6) {
-    text(choices[5], 420, 150, 80, 200);
-  }
-  if (t == 4 && a == 5 && z1 == 6) {
-    text(choices[6], 420, 150, 80, 200);
-  }
-  if (z == 1 && x == 2 && y == 3 && t == 4 && a == 5 && z1 == 6) {
-    text(choices[7], 0, 150, 80, 200);
+  choices = ["Player 1 loses.", "Player 1 has a trip.", "Player 1 wins!","Player 2 loses.","Player 2 has a trip.", "Player 2 wins!","Draw."];
+  switch(true){
+    //1st die set 
+    case z == 1 && x == 2 && y == 3:
+      text(choices[0], 0, 150, 80, 200);
+      break;
+    case z == 1 && x == 1 && y == 1:
+    case z == 2 && x == 2 && y == 2:
+    case z == 3 && x == 3 && y == 3:
+    case z == 4 && x == 4 && y == 4:
+    case z == 5 && x == 5 && y == 5:
+    case z == 6 && x == 6 && y == 6:
+      text(choices[1], 0, 150, 80, 200);
+      break;
+    case z == 4 && x == 5 && y == 6:
+      text(choices[2], 0, 150, 80, 200);
+      break;
+    //2nd die set
+    case t == 1 && a == 2 && z2== 3:
+      text(choices[4], 420, 150, 80, 200);
+    case t == 1 && a == 1 && z2 == 1:
+    case t == 2 && a == 2 && z2 == 2:
+    case t == 3 && a == 3 && z2 == 3:
+    case t == 4 && a == 4 && z2 == 4:
+    case t == 5 && a == 5 && z2 == 5:
+    case t == 6 && a == 6 && z2 == 6:
+      text(choices[5], 420, 150, 80, 200);
+      break;
+    case t == 4 && a == 5 && z2 == 6:
+      text(choices[6], 420, 150, 80, 200);
+      break;
+    case t == 4 && x == 5 && y == 6 && t == 4 && a == 5 && z2 == 6:
+      text(choices[7], 420, 150, 80, 200);
+      break;
   }
 }
 function check_odd() {
@@ -119,7 +102,7 @@ function check_odd() {
 function check_odd2() {
   t = round(random(0.5, 6.4));
   a = round(random(0.5, 6.4));
-  z1 = round(random(0.5, 6.4));
+  z2 = round(random(0.5, 6.4));
   redraw();
 }
 function bet1(){
