@@ -29,7 +29,13 @@ function setup() {
   button = createButton('Enter');
   button.position(200,270);
   button.mousePressed(bet1);
+  button = createButton('Enter');
+  button.position(200,270);
+  button.mousePressed(bet1);
   //player 2 input for betting
+  button = createButton('Enter');
+  button.position(350,270);
+  button.mousePressed(bet2);
   button = createButton('Enter');
   button.position(350,270);
   button.mousePressed(bet2);
@@ -38,6 +44,8 @@ function draw() {
   background(255);
   fill(0);
   textSize(20);
+  bet1();
+  bet2();
   if_statements();
   rectangles();
 }
