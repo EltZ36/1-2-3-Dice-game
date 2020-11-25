@@ -41,7 +41,7 @@ function setup() {
   button.mousePressed(bet2);
 }
 function draw() {
-  background(255);
+  background(190);
   fill(0);
   textSize(20);
   bet1();
