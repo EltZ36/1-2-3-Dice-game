@@ -85,6 +85,7 @@ function if_statements(){
     //2nd die set
     case t == 1 && a == 2 && z2== 3:
       text(choices[4], 420, 150, 80, 200);
+      break;
     case t == 1 && a == 1 && z2 == 1:
     case t == 2 && a == 2 && z2 == 2:
     case t == 3 && a == 3 && z2 == 3:
