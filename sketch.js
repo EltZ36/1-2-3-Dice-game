@@ -101,7 +101,7 @@ function if_statements(){
       text(choices[7], 420, 150, 80, 200);
       break;
   }
-}
+
 function check_odd() {
   z = round(random(0.5, 6.4));
   x = round(random(0.5, 6.4));
