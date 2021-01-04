@@ -1,5 +1,5 @@
 //This version of the 4-5-6 game is without a banker.
-//requires p5.dom.js library
+//requires p5.dom.js library current issues: check_odd isn't working.
 //for first die set.
 var z = 0;
 var x = 0;
@@ -131,3 +131,4 @@ function bet2(){
   text("Player 2 bets"+pbet2+"dollar(s).",280,310,80,200);
   p2bet.value('');
 }
+
